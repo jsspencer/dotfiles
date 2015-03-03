@@ -14,7 +14,7 @@ done
 
 # install machine-specific configs
 
-if [[ -e /etc/arch-release ]]; then
+if [[ -d arch && -e /etc/arch-release ]]; then
     (
         cd arch/
         for d in */; do
@@ -23,7 +23,7 @@ if [[ -e /etc/arch-release ]]; then
     )
 fi
 
-if hostname -f | grep -q cmth; then
+if [[ -e cmth ]] && hostname -f | grep -q cmth; then
     (
         cd cmth
         for d in */; do
