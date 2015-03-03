@@ -1,0 +1,11 @@
+# Connection timeout to be passed to curl. Setting this to 0 will disable
+# timeouts.
+ConnectTimeout = 60
+#
+# Absolute path to download and extract to. Parameter and tilde expansions are
+# honored here.
+TargetDir = ~/build
+
+# Max number of threads cower will use. This is synonymous with the max number
+# of concurrent connections that will be opened to the AUR.
+MaxThreads = 2
