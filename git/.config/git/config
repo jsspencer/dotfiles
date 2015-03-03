@@ -1,0 +1,11 @@
+[user]
+	name = James Spencer
+	email = j.spencer@imperial.ac.uk
+[push]
+	default = simple
+[core]
+    editor = vim
+[alias]
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit --color
+[color]
+    ui = auto
