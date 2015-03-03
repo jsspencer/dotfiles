@@ -1,0 +1,33 @@
+#!/bin/bash
+
+subdirs="arch/ cmth/"
+STOW="stow -v -t $HOME"
+
+git submodule init
+git submodule update
+
+for d in */; do
+    if ! echo $subdirs | grep -q $d; then
+        $STOW $d
+    fi
+done
+
+# install machine-specific configs
+
+if [[ -e /etc/arch-release ]]; then
+    (
+        cd arch/
+        for d in */; do
+            $STOW $d
+        done
+    )
+fi
+
+if hostname -f | grep -q cmth; then
+    (
+        cd cmth
+        for d in */; do
+            $STOW $d
+        done
+    )
+fi
