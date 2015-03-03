@@ -50,3 +50,8 @@ let g:tagbar_sort = 0
 let g:syntastic_python_checkers = ['python']
 " not finding fortran modules is just too bloody annoying 
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['fortran', 'tex'] }
+
+" clear signcolumn
+highlight clear SignColumn
+" vim-gitgutter used SignColumn to set its colours; reload it
+call gitgutter#highlight#define_highlights()
