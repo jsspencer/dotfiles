@@ -24,15 +24,17 @@ autocmd FileType fortran setlocal fo+=cq
 autocmd FileType fortran let b:fortran_do_enddo=1
 autocmd FileType fortran let fortran_free_source=1
 
-set cc=90
 set textwidth=90
 " unless PEP8 is in force.
-autocmd FileType python set cc=80
 autocmd FileType python set textwidth=80
 " or making git commits
-autocmd FileType gitcommit set cc=72
 autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set wrap
+if has('colorcolumn')
+    set colorcolumn=90
+    autocmd FileType python set colorcolumn=80
+    autocmd FileType gitcommit set colorcolumn=72
+endif
 
 " Visual word wrap
 set formatoptions=1
