@@ -52,6 +52,7 @@ let g:tagbar_sort = 0
 let g:syntastic_python_checkers = ['python']
 " not finding fortran modules is just too bloody annoying 
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['fortran', 'tex'] }
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 " clear signcolumn
 highlight clear SignColumn
