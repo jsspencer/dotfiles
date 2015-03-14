@@ -30,10 +30,8 @@ autocmd FileType python set textwidth=80
 " or making git commits
 autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set wrap
-if has('colorcolumn')
-    set colorcolumn=90
-    autocmd FileType python set colorcolumn=80
-    autocmd FileType gitcommit set colorcolumn=72
+if exists('+colorcolumn')
+    set colorcolumn=+1,+2
 endif
 
 " Visual word wrap
