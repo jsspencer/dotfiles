@@ -1,0 +1,9 @@
+# -*- Mode: muttrc -*-
+#
+# Largely borrowed from github.com/clarete/muttrc.git.
+
+source ~/.mutt/inc/base
+source ~/.mutt/inc/colours
+source ~/.mutt/inc/sidebar
+
+source ~/.mutt/accounts/j.spencer@imperial.ac.uk/ident

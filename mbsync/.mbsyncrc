@@ -1,0 +1,20 @@
+IMAPAccount imperial
+Host exchange.imperial.ac.uk
+User jspencer
+UseIMAPS yes
+PassCmd "pass imperial/jspencer"
+
+IMAPStore imperial-remote
+Account imperial
+
+MaildirStore imperial-local
+Path ~/.mutt/mail/imperial/
+Inbox ~/.mutt/mail/imperial/inbox
+
+Channel imperial
+Master :imperial-remote:
+Slave :imperial-local:
+Create Both
+Expunge Slave
+SyncState *
+Patterns *
