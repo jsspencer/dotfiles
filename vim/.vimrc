@@ -56,3 +56,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 highlight clear SignColumn
 " vim-gitgutter used SignColumn to set its colours; reload it
 call gitgutter#highlight#define_highlights()
+
+" mutt
+" remove signatures when replying...
+autocmd BufRead */tmp/mutt* normal :g/^> -- $/,/^$/-1d^M/^$^M^L

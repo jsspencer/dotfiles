@@ -1,1 +1,2 @@
 text/html; w3m -I %{charset} -T text/html; copiousoutput; nametemplate=%s.html
+application/*; mkdir -p /tmp/mutt \; cp %s /tmp/mutt \; xdg-open /tmp/mutt/$(basename %s) &
