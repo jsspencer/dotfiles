@@ -15,6 +15,6 @@ Channel imperial
 Master :imperial-remote:
 Slave :imperial-local:
 Create Both
-Expunge Slave
+Expunge Both
 SyncState *
 Patterns *
