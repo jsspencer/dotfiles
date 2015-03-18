@@ -4,7 +4,7 @@ set realname = 'James Spencer'
 set from = 'j.spencer@imperial.ac.uk'
 set signature = '~/.mutt/accounts/j.spencer@imperial.ac.uk/signature'
 
-set sendmail = '/usr/bin/msmtp -a imperial'
+set sendmail = 'msmtp -a imperial'
 
 set folder = ~/.mutt/mail/imperial
 
