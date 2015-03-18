@@ -24,6 +24,7 @@ set mark_old = no
 #set sort = threads
 #set sort_aux = reverse-last-date-received
 set pager_index_lines = 15
+set menu_scroll = yes
 
 # editing
 set fast_reply = yes
@@ -31,3 +32,5 @@ set include = yes
 
 # start at the end...
 folder-hook . exec last-entry
+# delete temporary copies of attachments
+folder-hook . `rm -f /tmp/mutt/attachments/*`
