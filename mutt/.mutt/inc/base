@@ -31,10 +31,12 @@ set menu_scroll = yes
 # Change faster
 set sleep_time=0
 
-
 # editing
 set fast_reply = yes
 set include = yes
+set mime_forward = ask-yes
+set mime_forward_decode = no
+set mime_forward_rest = yes
 
 # start at the end...
 folder-hook . exec last-entry
