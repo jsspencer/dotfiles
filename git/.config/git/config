@@ -9,3 +9,5 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit --color
 [color]
     ui = auto
+[fetch]
+	prune = true
