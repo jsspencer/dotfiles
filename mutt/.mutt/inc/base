@@ -2,6 +2,8 @@
 
 # Caches
 set header_cache='~/.cache/mutt
+# I promise to be good if in return mailboxes change faster...
+set maildir_header_cache_verify=no
 
 # Automatic viewing html
 auto_view text/html
@@ -25,6 +27,10 @@ set mark_old = no
 #set sort_aux = reverse-last-date-received
 set pager_index_lines = 15
 set menu_scroll = yes
+
+# Change faster
+set sleep_time=0
+
 
 # editing
 set fast_reply = yes
