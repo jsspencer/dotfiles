@@ -43,3 +43,7 @@ set mime_forward_rest = yes
 folder-hook . exec last-entry
 # delete temporary copies of attachments
 folder-hook . `rm -f /tmp/mutt/attachments/*`
+
+# addresses
+set alias_file = ~/.mutt/aliases
+source $alias_file
