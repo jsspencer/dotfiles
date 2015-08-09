@@ -1,3 +1,4 @@
+text/html; xdg-open '%s' &; test=test -n "$DISPLAY"; needsterminal;
 text/html; w3m -I %{charset} -T text/html; copiousoutput; nametemplate=%s.html
 application/*; mkdir -p /tmp/mutt/attachments \; cp %s /tmp/mutt/attachments  \; xdg-open /tmp/mutt/attachments/$(basename %s) &
 image/*; mkdir -p /tmp/mutt/attachments \; cp %s /tmp/mutt/attachments  \; xdg-open /tmp/mutt/attachments/$(basename %s) &
