@@ -1,0 +1,15 @@
+#!/bin/bash
+
+TEMP=$(mktemp -d)
+DEST=$HOME/local/stow
+
+(
+    cd $TEMP
+    wget -O - http://ftp.gnu.org/gnu/stow/stow-2.2.0.tar.gz | tar xvzf -
+    cd stow-2.2.0
+    ./configure --prefix=$DEST
+    make
+    make install
+)
+
+rm -rf $TEMP
