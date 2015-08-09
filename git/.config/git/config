@@ -11,3 +11,5 @@
     ui = auto
 [fetch]
 	prune = true
+[rerere]
+	enabled = true
