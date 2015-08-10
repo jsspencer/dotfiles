@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Manage plugging in an external monitor.
+
+# Largely from arandr.
+xrandr --output HDMI2 --auto --pos 0x0 --rotate normal --output eDP1 --auto --right-of HDMI2 --rotate normal
+
+# bspc creates new desktop(s) automatically on the external monitor.  We don't want these. 
+# Move I-VI to external instead.
+new=$(bspc query -m HDMI2 -D)
+for X in I II III IV V VI; do bspc desktop $X -m HDMI2; done
+bspc monitor HDMI2 -r $new
+
+# so swap the monitors to have the desktop numbering match the roman numerals above.
+bspc monitor HDMI2 -s eDP1
+
+# Best to reload the panel
+pkill panel
+$HOME/.config/bspwm/panel &
+feh --bg-scale /usr/share/archlinux/wallpaper/archlinux-firestarter.jpg

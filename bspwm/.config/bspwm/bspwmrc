@@ -1,0 +1,45 @@
+#!/bin/bash
+
+bspc config border_width        2
+bspc config window_gap          0
+
+bspc config split_ratio         0.50
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   false
+
+bspc config focused_border_color red
+bspc config presel_border_color green
+
+bspc config auto_cancel true
+
+# split desktops across multiple monitors, if there is one.
+bspc config remove_unplugged_monitors true
+if [[ $(bspc query -M | wc -l) -eq 2 ]]; then
+    bspc monitor HDMI2 -d I II III IV V VI
+    bspc monitor eDP1 -d VII VIII IX X
+    # focus on external monitor to start
+    bspc monitor -f HDMI2
+    # bspc appears to allocate desktops on the internal first.  This messes up the numbering a bit
+    # so swap the monitors to have the desktop numbering match the roman numerals above.
+    bspc monitor HDMI2 -s eDP1
+    # from using arandr: set internal to be right of the external...
+    xrandr --output HDMI2 --auto --pos 0x0 --rotate normal --output eDP1 --auto --right-of HDMI2 --rotate normal
+else
+    bspc monitor -d I II III IV V VI VII VIII IX X
+fi
+
+bspc rule -a Gimp desktop=^8 follow=on floating=on
+bspc rule -a Chromium desktop=^2
+bspc rule -a dwb desktop=^2
+bspc rule -a Screenkey manage=off
+bspc rule -a scratchpad floating=on center=on
+
+$(dirname $0)/panel &
+
+[[ $(bspc query -M | wc -l) -eq 2 ]] && bspc config -m eDP1 top_padding 0
+
+urxvtc &
+tabbed -c urxvtc -embed &
+
+#feh  --bg-scale '/usr/share/archlinux/wallpaper/archlinux-firestarter.jpg' 

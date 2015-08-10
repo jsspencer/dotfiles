@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Manage removing an external monitor.
+# from arandr.
+xrandr --output HDMI2 --off --output HDMI1 --off --output DP1 --off --output eDP1 --mode 1366x768 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+
+# We've inherited the desktops from external, so just reorder them.
+bspc monitor -o I II III IV V VI VII VIII IX X
+
+# Best to reload the panel
+pkill panel
+$HOME/.config/bspwm/panel &
