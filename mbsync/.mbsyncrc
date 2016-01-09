@@ -1,7 +1,7 @@
 IMAPAccount imperial
-Host exchange.imperial.ac.uk
-User jspencer
-UseIMAPS yes
+Host outlook.office365.com
+User jspencer@ic.ac.uk
+SSLType IMAPS
 PassCmd "pass imperial/jspencer"
 
 IMAPStore imperial-remote
