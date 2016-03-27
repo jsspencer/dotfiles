@@ -1,6 +1,6 @@
 #!/bin/bash
 
-subdirs="arch/ cmth/"
+subdirs="arch/"
 STOW=${STOW-stow}
 STOW_CMD="$STOW -v -t $HOME"
 
@@ -18,15 +18,6 @@ done
 if [[ -d arch && -e /etc/arch-release ]]; then
     (
         cd arch/
-        for d in */; do
-            $STOW_CMD $d
-        done
-    )
-fi
-
-if [[ -e cmth ]] && hostname -f | grep -q cmth; then
-    (
-        cd cmth
         for d in */; do
             $STOW_CMD $d
         done
