@@ -1,3 +1,6 @@
 vim/.vim/.netrwhist
 mutt/.mutt/mail
 mutt/.mutt/tmp
+mutt/.mutt/aliases
+tmux/.tmux/plugins
+*/.config
