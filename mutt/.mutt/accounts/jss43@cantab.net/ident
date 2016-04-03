@@ -1,0 +1,15 @@
+# -*- Mode: muttrc -*-
+
+set realname = 'James Spencer'
+set from = 'jss43@cantab.net'
+set signature = '~/.mutt/accounts/jss43@cantab.net/signature'
+
+set sendmail = 'msmtp -a cantab'
+
+set folder = ~/.mutt/mail/cantab
+
+set spoolfile = +inbox
+set postponed = +Drafts
+set record = +Sent
+
+mailboxes =inbox =Drafts =Sent

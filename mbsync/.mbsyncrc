@@ -19,3 +19,25 @@ Create Both
 Expunge Both
 SyncState *
 Patterns *
+
+IMAPAccount cantab
+Host mail.secure.aluminati.net
+User jss43@cantab.net
+SSLType IMAPS
+PassCmd "pass cantab/jss43"
+AuthMechs LOGIN
+
+IMAPStore cantab-remote
+Account cantab
+
+MaildirStore cantab-local
+Path ~/.mutt/mail/cantab/
+Inbox ~/.mutt/mail/cantab/inbox
+
+Channel cantab
+Master :cantab-remote:
+Slave :cantab-local:
+Create Both
+Expunge Both
+SyncState *
+Patterns *

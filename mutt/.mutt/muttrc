@@ -7,3 +7,10 @@ source ~/.mutt/inc/colours
 source ~/.mutt/inc/sidebar
 
 source ~/.mutt/accounts/j.spencer@imperial.ac.uk/ident
+folder-hook $folder 'source ~/.mutt/accounts/j.spencer@imperial.ac.uk/ident'
+
+source ~/.mutt/accounts/jss43@cantab.net/ident
+folder-hook $folder 'source ~/.mutt/accounts/jss43@cantab.net/ident'
+
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/j.spencer@imperial.ac.uk/ident<enter><change-folder>!<enter>'
+macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/jss43@cantab.net/ident<enter><change-folder>!<enter>'
