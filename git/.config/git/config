@@ -13,3 +13,5 @@
 	prune = true
 [rerere]
 	enabled = true
+[diff "json"]
+	textconv = python -m json.tool
