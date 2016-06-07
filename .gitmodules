@@ -42,4 +42,4 @@
 	url = https://github.com/tmux-plugins/tpm
 [submodule "zsh/.zprezto"]
 	path = zsh/.zprezto
-	url = https://github.com/sorin-ionescu/prezto.git
+	url = https://github.com/jsspencer/prezto
