@@ -10,8 +10,6 @@ synclient TapButton3=3 TapButton2=2
 #$HOME/src/pomo/pomo.sh start
 #$HOME/src/pomo/pomo.sh notify &
 
-#devmon &
-
 #mpd
 #mpc stop
 
@@ -23,11 +21,10 @@ xmodmap -e 'add mod1 = ISO_Level3_Shift'
 xmodmap -e 'add mod1 = Alt_R'
 
 # Note: this leaves ssh-agent (and mpd) running after logout...
-eval $(ssh-agent -t 3h)
-eval $(gpg-agent --daemon)
+#eval $(ssh-agent -t 3h)
+#eval $(gpg-agent --daemon)
 xsetroot -cursor_name left_ptr
-#feh --bg-scale /usr/share/archlinux/wallpaper/archlinux-firestarter.jpg
-dunst &
+#dunst &
 sxhkd &
 urxvtd -q -f -o
 exec bspwm

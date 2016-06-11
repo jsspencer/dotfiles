@@ -1,12 +1,12 @@
 #! /bin/sh
 
-PANEL_FIFO=/tmp/panel-fifo
-PANEL_HEIGHT=15
-PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
 SCRIPT_DIR=$(dirname $0)
-export PANEL_FIFO PANEL_HEIGHT PANEL_FONT_FAMILY SCRIPT_DIR
 
-if [ $(pgrep -cx panel) -gt 1 ] ; then
+PANEL_HEIGHT=15
+PANEL_FIFO=/tmp/panel-fifo
+PANEL_FONT="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
+
+if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
 	printf "%s\n" "The panel is already running." >&2
 	exit 1
 fi
@@ -17,13 +17,22 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 mkfifo "$PANEL_FIFO"
 
 bspc config top_padding $PANEL_HEIGHT
-bspc control --subscribe > "$PANEL_FIFO" &
+bspc subscribe report > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 clock -sf 'S%a %b %d %H:%M' > "$PANEL_FIFO" &
-$HOME/src/pomo/pomo.sh status | sed -u 's/^/P/' > "$PANEL_FIFO" &
+#$HOME/src/pomo/pomo.sh status | sed -u 's/^/P/' > "$PANEL_FIFO" &
 
 . $SCRIPT_DIR/panel_colors
 
-cat "$PANEL_FIFO" | $SCRIPT_DIR/panel_bar | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT_FAMILY" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+$SCRIPT_DIR/panel_bar < "$PANEL_FIFO" | lemonbar -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" &
+
+#wid=$(xdo id -a "$PANEL_WM_NAME")
+#tries_left=20
+#while [ -z "$wid" -a "$tries_left" -gt 0 ] ; do
+	#sleep 0.05
+	#wid=$(xdo id -a "$PANEL_WM_NAME")
+	#tries_left=$((tries_left - 1))
+#done
+#[ -n "$wid" ] && xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
 
 wait

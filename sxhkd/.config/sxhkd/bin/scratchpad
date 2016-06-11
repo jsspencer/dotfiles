@@ -1,0 +1,22 @@
+#!/bin/bash -e
+
+function hide_scratchpad {
+    xdotool search --onlyvisible --classname scratchpad windowunmap
+}
+
+function show_scratchpad {
+    scratchid=$(xdotool search --classname scratchpad)
+    [[ -z ${scratchid} ]] && return 1
+    xdotool windowmap $scratchid
+    if [[ $(xdotool getwindowfocus) -ne ${scratchid} ]]; then
+        bspc node $scratchid --to-desktop focused
+    fi
+    bspc node $scratchid --focus
+}
+
+function new_scratchpad {
+    urxvtc -name scratchpad -g 88x31
+}
+
+
+hide_scratchpad || show_scratchpad || new_scratchpad
