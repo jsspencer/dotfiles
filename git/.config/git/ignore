@@ -2,3 +2,5 @@
 .watsonrc
 tags
 local
+*swp
+build
