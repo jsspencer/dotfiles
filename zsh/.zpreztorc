@@ -23,6 +23,7 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
+(( $+commands[gls] )) && GNU_UTIL_MOD='gnu-utility' || GNU_UTIL_MOD=
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
@@ -31,6 +32,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'directory' \
   'spectrum' \
+  $GNU_UTIL_MOD \
   'utility' \
   'completion' \
   'prompt'
