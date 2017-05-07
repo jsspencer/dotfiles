@@ -1,0 +1,23 @@
+XTerm*faceName:           xos4 Terminus:medium:pixelsize=14
+xterm*background:         #fafafa
+xterm*eightBitInput:      true
+xterm*saveLines:          2512
+xterm*utf8:               2
+xterm*scrollKey:          true
+xterm*scrollTtyOutput:    false
+xterm*scrollBar:          false
+xterm*rightScrollBar:     true
+xterm*jumpScroll:         true
+xterm*multiScroll:        true
+xterm*toolBar:            false
+xterm*metaSendsEscape:    true
+
+URxvt.font: xft:xos4 Terminus:medium:pixelsize=14
+URxvt.boldFont: xft:xos4 Terminus:bold
+URxvt.scrollBar: off
+URxvt.background:         #fafafa
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      /usr/bin/firefox
+URxvt.matcher.button:   3
+
+scratchpad.background:         #ffffff
