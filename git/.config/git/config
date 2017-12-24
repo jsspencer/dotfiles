@@ -15,3 +15,5 @@
 	enabled = true
 [diff "json"]
 	textconv = python -m json.tool
+[commit]
+	verbose = true
