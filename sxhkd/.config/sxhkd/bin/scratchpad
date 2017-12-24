@@ -15,7 +15,7 @@ function show_scratchpad {
 }
 
 function new_scratchpad {
-    urxvtc -name scratchpad -g 88x31
+    urxvtc -name scratchpad -g 88x31 -e tmux new-session -A -s scratch
 }
 
 
