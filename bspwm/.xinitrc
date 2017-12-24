@@ -15,15 +15,7 @@ xset -b
 #mpc stop
 
 setxkbmap -layout gb
-xmodmap -e 'remove mod5 = ISO_Level3_Shift'
-xmodmap -e 'remove mod1 = Alt_L'
-xmodmap -e 'add mod4 = Alt_L'
-xmodmap -e 'add mod1 = ISO_Level3_Shift'
-xmodmap -e 'add mod1 = Alt_R'
 
-# Note: this leaves ssh-agent (and mpd) running after logout...
-#eval $(ssh-agent -t 3h)
-#eval $(gpg-agent --daemon)
 xsetroot -cursor_name left_ptr
 #dunst &
 sxhkd &
