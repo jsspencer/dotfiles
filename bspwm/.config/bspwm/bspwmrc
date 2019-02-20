@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 bspc config border_width        2
 bspc config window_gap          0
@@ -36,7 +36,7 @@ for browser in Chromium Firefox qutebrowser; do
     bspc rule -a $browser desktop=^2
 done
 
-$(dirname $0)/panel &
+polybar example &
 
 urxvtc &
 
