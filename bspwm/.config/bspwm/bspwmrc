@@ -6,29 +6,11 @@ bspc config window_gap          0
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
-bspc config focus_by_distance   false
 bspc config single_monocle      true
 bspc config border_width        3
-bspc config focused_border_color '#ff8300'
-bspc config presel_border_color  '#fdff99'
-
-
-# split desktops across multiple monitors, if there is one.
+bspc config focused_border_color '#D85F00'
+bspc config presel_feedback_color  '#D85F00'
 bspc config remove_unplugged_monitors true
-if [[ $(bspc query -M | wc -l) -eq 2 ]]; then
-    bspc monitor HDMI2 -d I II III IV V VI
-    bspc monitor eDP1 -d VII VIII IX X
-    # focus on external monitor to start
-    bspc monitor -f HDMI2
-    # bspc appears to allocate desktops on the internal first.  This messes up the numbering a bit
-    # so swap the monitors to have the desktop numbering match the roman numerals above.
-    bspc monitor HDMI2 -s eDP1
-    # from using arandr: set internal to be right of the external...
-    xrandr --output HDMI2 --auto --pos 0x0 --rotate normal --output eDP1 --auto --right-of HDMI2 --rotate normal
-    bspc config -m eDP1 top_padding 0
-else
-    bspc monitor -d I II III IV V VI VII VIII IX X
-fi
 
 bspc rule -a '*:scratchpad' sticky=off state=floating center=on
 bspc rule -a Gimp desktop=^8 follow=on state=floating
@@ -36,8 +18,11 @@ for browser in Chromium Firefox qutebrowser; do
     bspc rule -a $browser desktop=^2
 done
 
+# TODO: set up multiple monitors and autorandr.
+bspc monitor -d {1..10}
+
 polybar example &
 
 urxvtc &
 
-feh  --bg-scale '/usr/share/archlinux/wallpaper/archlinux-aftermath.jpg' 
+feh  --bg-scale '/usr/share/backgrounds/archlinux/wave.png' 
