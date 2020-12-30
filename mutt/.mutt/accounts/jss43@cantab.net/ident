@@ -12,4 +12,8 @@ set spoolfile = +inbox
 set postponed = +Drafts
 set record = +Sent
 
-mailboxes =inbox =archive =Drafts =Sent
+# mailboxes =inbox =archive =Drafts =Sent
+named-mailboxes "Inbox (IC)" =inbox
+named-mailboxes "Archive (IC)" =archive
+named-mailboxes "Drafts (IC)" =Drafts
+named-mailboxes "Sent (IC)" =Sent

@@ -14,7 +14,7 @@ set read_inc = 100
 set mail_check = 90
 set timeout = 15
 
-# Futher config
+## Futher config
 set mbox_type = Maildir
 set tmpdir=~/.mutt/tmp
 set mailcap_path=~/.mutt/mailcap
@@ -30,7 +30,7 @@ set pager_index_lines = 5
 set markers = no
 set menu_scroll = yes
 
-# Change faster
+## Change faster
 set sleep_time=0
 
 # editing
@@ -43,8 +43,8 @@ set mime_forward_rest = yes
 # start at the end...
 folder-hook . exec last-entry
 # delete temporary copies of attachments
-folder-hook . `rm -f /tmp/mutt/attachments/*`
+#folder-hook . `rm -f /tmp/mutt/attachments/*`
 
-# addresses
+## addresses
 set alias_file = ~/.mutt/aliases
 source $alias_file

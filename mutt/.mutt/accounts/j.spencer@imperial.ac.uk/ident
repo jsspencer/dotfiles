@@ -13,3 +13,6 @@ set postponed = +Drafts
 set record = +Sent
 
 mailboxes =inbox =Drafts =Sent
+named-mailboxes "Inbox (Cantab)" =inbox
+named-mailboxes "Drafts (Cantab)" =Drafts
+named-mailboxes "Sent (Cantab)" =Sent

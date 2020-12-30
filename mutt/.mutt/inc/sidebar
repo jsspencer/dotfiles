@@ -9,8 +9,12 @@ bind pager \CP sidebar-prev
 bind pager \CN sidebar-next
 bind pager \CO sidebar-open
 color sidebar_new yellow default
-set sidebar_width=20
+set sidebar_width=30
 
 set sidebar_divider_char = '│'
 set sidebar_short_path = yes
+
 set sidebar_folder_indent = yes
+set sidebar_format = "%D %* [%?N?%N / ?%S]"
+set sidebar_indent_string = ' '
+set sidebar_component_depth = 1
