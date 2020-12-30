@@ -1,5 +1,5 @@
 XTerm*faceName:           xos4 Terminus:medium:pixelsize=14
-xterm*background:         #fafafa
+!xterm*background:         #fafafa
 xterm*eightBitInput:      true
 xterm*saveLines:          2512
 xterm*utf8:               2
@@ -15,9 +15,9 @@ xterm*metaSendsEscape:    true
 URxvt.font: xft:xos4 Terminus:medium:pixelsize=14
 URxvt.boldFont: xft:xos4 Terminus:bold
 URxvt.scrollBar: off
-URxvt.background:         #fafafa
 URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/firefox
 URxvt.matcher.button:   3
 
-scratchpad.background:         #ffffff
+#include ".Xresources.d/urxvt_papercolor_theme/papercolor_light"
+!#include ".Xresources.d/urxvt_papercolor_theme/papercolor_dark"
